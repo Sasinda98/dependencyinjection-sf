@@ -19,7 +19,7 @@ public class DependencyinjectionsandboxApplication {
 
 
 		/**
-		 * Demo of how Constructor injected object
+		 * Demo of how Constructor injected object gets used.
 		 */
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean(ConstructorInjectedController.class);
 		constructorInjectedController.greet();
