@@ -3,6 +3,7 @@ package com.gsr.dependencyinjectionsf.dependencyinjectionsandbox;
 import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.ConstructorInjectedController;
 import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.MyController;
 import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.PropertyInjectedController;
+import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -26,10 +27,17 @@ public class DependencyinjectionsandboxApplication {
 		constructorInjectedController.greet();
 
 		/**
-		 * Demo of how Constructor injected object gets used.
+		 * Demo of how Property injected object gets used.
 		 */
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) context.getBean(PropertyInjectedController.class);
 		propertyInjectedController.greet();
+
+		/**
+		 * Demo of how Setter injected object gets used.
+		 */
+		SetterInjectedController setterInjectedController = (SetterInjectedController) context.getBean(SetterInjectedController.class);
+		setterInjectedController.getGreetingService().getGreeting();
+
 	}
 
 }
