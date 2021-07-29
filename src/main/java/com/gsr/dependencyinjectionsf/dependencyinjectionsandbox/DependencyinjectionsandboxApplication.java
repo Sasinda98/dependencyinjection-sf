@@ -1,13 +1,20 @@
 package com.gsr.dependencyinjectionsf.dependencyinjectionsandbox;
 
+import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.MyController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DependencyinjectionsandboxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DependencyinjectionsandboxApplication.class, args);
+		/**
+		 * Shows how to get reference to objects within the application context.
+		 */
+		ApplicationContext context = SpringApplication.run(DependencyinjectionsandboxApplication.class, args);
+		MyController controller = (MyController) context.getBean(MyController.class);
+		System.out.println(controller.sayHello());
 	}
 
 }
