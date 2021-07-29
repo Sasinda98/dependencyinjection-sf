@@ -35,6 +35,12 @@ public class DependencyinjectionsandboxApplication {
 		SetterInjectedController setterInjectedController = (SetterInjectedController) context.getBean(SetterInjectedController.class);
 		setterInjectedController.greet();
 
+		/**
+		 * Demo of how profiling can be used to customize the runtime context of Spring apps.
+		 */
+		I18nController i18nController = (I18nController) context.getBean(I18nController.class);
+		i18nController.greet();
+
 	}
 
 }
