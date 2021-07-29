@@ -1,5 +1,6 @@
 package com.gsr.dependencyinjectionsf.dependencyinjectionsandbox;
 
+import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.ConstructorInjectedController;
 import com.gsr.dependencyinjectionsf.dependencyinjectionsandbox.Controllers.MyController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,13 @@ public class DependencyinjectionsandboxApplication {
 		ApplicationContext context = SpringApplication.run(DependencyinjectionsandboxApplication.class, args);
 		MyController controller = (MyController) context.getBean(MyController.class);
 		System.out.println(controller.sayHello());
+
+
+		/**
+		 * Demo of how Constructor injected object
+		 */
+		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean(ConstructorInjectedController.class);
+		constructorInjectedController.greet();
 	}
 
 }
